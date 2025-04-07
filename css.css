@@ -1,0 +1,303 @@
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #3f37c9;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Đảm bảo body có chiều cao 100% */
+    overflow: hidden;
+    position: relative;
+    display: flex; /* Sử dụng Flexbox để căn giữa */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo video phủ đầy màn hình */
+  z-index: -1; /* Đặt video phía sau các phần tử khác */
+}
+
+  
+  /* Background bubbles animation */
+  body::before,
+  body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    animation: float 15s infinite linear;
+  }
+  
+  body::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+  }
+  
+  body::after {
+    width: 200px;
+    height: 200px;
+    bottom: -30px;
+    right: -30px;
+    animation-delay: 5s;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+    }
+  }
+  
+  .login-box {
+    width: 380px;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.5); /* Nền trong suốt */
+    backdrop-filter: blur(5px); /* Làm mờ nền phía sau */
+    box-shadow: var(--shadow);
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    transform: scale(1);
+    transition: var(--transition);
+}
+  
+  .login-box:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    transition: var(--transition);
+  }
+  
+  .input-group input:focus + i {
+    color: var(--secondary);
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 2px solid rgba(67, 97, 238, 0.2);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(240, 242, 255, 0.3);
+    transition: var(--transition);
+    color: var(--dark);
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    background-color: white;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--dark);
+    opacity: 0.5;
+    transition: var(--transition);
+  }
+  
+  .toggle-password:hover {
+    opacity: 1;
+    color: var(--primary);
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 8px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(to right, var(--primary-dark), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+  }
+  
+  .or {
+    margin: 1.5rem 0;
+    color: #666;
+    position: relative;
+  }
+  
+  .or::before,
+  .or::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+  }
+  
+  .or::before {
+    left: 0;
+  }
+  
+  .or::after {
+    right: 0;
+  }
+  
+  .links {
+    margin-top: 1.5rem;
+  }
+  
+  .links p {
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .links a button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1rem;  
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+  }
+  
+  .links a button:hover {
+    color: var(--primary-dark);
+  }
+
+.music-control {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.music-control:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+#tick {
+  position: absolute;
+  left: 50%; /* Đặt phần tick ở giữa theo chiều ngang */
+  bottom: 10px; /* Đặt phần tick ở dưới cùng của box */
+  transform: translateX(-50%); /* Dịch chuyển phần tick sang trái để căn giữa */
+  display: flex;
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  gap: 0.5rem; /* Khoảng cách giữa ảnh và văn bản */
+}
+
+#tick img {
+  width: 1em; /* Đặt kích thước ảnh bằng với kích thước văn bản */
+  height: 1em; /* Đặt chiều cao ảnh bằng với chiều cao văn bản */
+  border-radius: 50%; /* Tạo hình tròn cho ảnh */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho ảnh */
+}
+
+.signature {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #666;
+  transition: var(--transition);
+}
+
+.signature:hover {
+  color: var(--primary);
+}
+
+.colorful-text {
+  background: linear-gradient(to right, #4361ee, #3a0ca3, #7209b7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}

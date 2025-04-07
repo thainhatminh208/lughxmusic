@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 70px; /* Thêm padding để tránh bị navbar che nội dung */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 30px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+#h1 {
+    position: relative;
+    top: 20px; /* Điều chỉnh lại vị trí */
+    font-weight: bold;
+    text-align: left;
+    left: 50px;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+}
+
+.card {
+    flex: 0 0 calc(20% - 15px); /* 5 card mỗi dòng (20% - khoảng cách) */
+    max-width: calc(20% - 15px); /* Đảm bảo không vượt quá */
+    border: 1px solid #0e0101;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(255, 0, 150, 0.3), 0px 0px 15px rgba(0, 255, 255, 0.3);
+    text-align: center;
+    background: white;
+    animation: fadeIn 0.8s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 1000px) {
+    .card {
+        flex: 0 0 calc(25% - 15px); /* 4 card mỗi dòng */
+        max-width: calc(25% - 15px);
+    }
+}
+
+/* Responsive cho tablet nhỏ */
+@media (max-width: 800px) {
+    .card {
+        flex: 0 0 calc(33.33% - 15px); /* 3 card mỗi dòng */
+        max-width: calc(33.33% - 15px);
+    }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+    .card {
+        flex: 0 0 calc(50% - 15px); /* 2 card mỗi dòng */
+        max-width: calc(50% - 15px);
+    }
+}
+
+/* Responsive cho mobile nhỏ */
+@media (max-width: 400px) {
+    .card {
+        flex: 0 0 100%; /* 1 card mỗi dòng */
+        max-width: 100%;
+    }
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* Giữ tỷ lệ hình vuông */
+    object-fit: cover; /* Đảm bảo hình ảnh phủ đầy không gian */
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card:hover {
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Các phần CSS khác giữ nguyên */
+
+/* Back Button Styles */
+.back-button-container {
+    margin: 20px 50px;
+    text-align: left;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjust h1 position to account for new button */
+#h1 {
+    position: relative;
+    top: 0; /* Changed from 20px */
+    font-weight: bold;
+    text-align: left;
+    left: 50px;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 10px; /* Added */
+}
+
+/* Add these to your existing CSS */
+
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Main categories */
+.main-categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    border-bottom: 2px solid #ff0096;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.category-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.category-description p {
+    color: #555;
+    font-style: italic;
+}
+
+.view-all {
+    color: #ff0096;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.view-all:hover {
+    color: #00ffff;
+    transform: translateX(5px);
+}
+
+        /* Thêm style cho back-button nếu chưa có trong css2.css */
+        .back-button-container {
+            margin: 20px;
+            padding-top: 80px;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #555;
+        }
+        
+        /* Style cho card có thể click */
+        .clickable-card {
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .clickable-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Thêm vào file css2.css */
+.navbar.scrolled {
+    padding: 10px 30px; /* Thu nhỏ padding */
+    background-color: rgba(51, 51, 51, 0.9); /* Làm nhạt màu */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled .logo {
+    font-size: 20px; /* Thu nhỏ logo */
+}
+
+.navbar.scrolled .nav-links a {
+    font-size: 16px; /* Thu nhỏ font menu */
+    position: relative;
+}
+
+/* Hiệu ứng sáng góc cho menu khi hover */
+.navbar.scrolled .nav-links a:hover {
+    color: #fff;
+}
+
+.navbar.scrolled .nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at var(--x) var(--y), 
+                rgba(255, 255, 255, 0.3) 0%, 
+                transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.navbar.scrolled .nav-links a:hover::before {
+    opacity: 1;
+}

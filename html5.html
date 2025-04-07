@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lughx Music Player</title>
+  <link rel="stylesheet" href="css5.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script defer src="js.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <nav class="navbar fixed-nav">
+    <div class="logo"><a href="html2.html" style="text-decoration: none; color: white;">Lughx</a></div>
+    <ul class="nav-links">
+      <li><a href="html2.html">Trang Chủ</a></li>
+      <li><a href="https://linkbio.co/isBim08">Giới Thiệu</a></li>
+      <li class="dropdown">
+        <a href="#">Playlist</a>
+        <ul class="dropdown-menu">
+            <li><a href="html3.html">#Playlist1</a></li>
+            <li><a href="html4.html">#Playlist2</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.facebook.com/profile.php?id=100058165548034">Liên Hệ</a></li>
+    </ul>
+  </nav>
+
+  <div class="music-player">
+    <div class="album-art">
+      <img src="img1.jpg" alt="Album Art" />
+    </div>
+
+    <div class="song-info">
+      <h2 id="song-title">[Playlist #1] Tháng Tư, mùa hoa anh đào và những giọt nước mắt... 🌸💧</h2>
+      <p id="song-artist">Lughx Music</p>
+    </div>
+
+    <div class="time-info">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress-bar" value="0" step="1">
+      <span id="duration">0:00</span>
+    </div>
+
+    <div class="controls">
+      <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+      <button id="play-btn" class="play-btn"><i class="fas fa-play"></i></button>
+      <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+    </div>
+  </div>
+  
+  <audio id="audio-player" src="0406.mp3"></audio>
+  <audio id="background-music" loop src="background-music.mp3"></audio>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="shortcut icon" type="image/x-icon" href="badge-check.png">
+    <link rel="stylesheet" href="css1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script defer src="js.js"></script>
+    <script defer src="toggle-password.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="login_success_alert.js"></script>
+</head>
+<body>
+    <div class="register-box">
+        <h2>Đăng Ký</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="registerEmail" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="registerPassword" placeholder="Mật khẩu" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="confirmPassword" id="registerConfirmPassword" placeholder="Nhập lại mật khẩu" required>
+            </div>
+            <input type="submit" class="btn" value="Đăng Ký">
+        </form>
+        
+
+        <p class="or">--------------------------</p>
+
+        <div class="links">
+            <p>Bạn đã có tài khoản?</p>
+            <a href="html.html">
+                <button id="loginButton">Đăng Nhập</button>
+            </a>
+        </div>
+        <div id="tick">
+            <img src="wired-gradient-37-approve-checked-simple-hover-wobble.gif" alt="GIF">
+            <a href="https://www.facebook.com/profile.php?id=100058165548034" target="facebook" class="signature">
+                <span class="colorful-text">Dev By Lughx</span>
+        </div>
+    </div>
+
+            <audio id="background-music" loop>
+                <source src="mu.mp3" type="audio/mpeg">
+                Trình duyệt của bạn không hỗ trợ audio.
+            </audio>
+            
+            <button id="music-btn" class="music-control">🎵 Play</button>
+
+            <video autoplay muted loop id="background-video">
+                <source src="bg1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+</body>
+</html>
